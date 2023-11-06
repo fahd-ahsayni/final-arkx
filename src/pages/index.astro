@@ -1,14 +1,24 @@
 ---
+import HeroSection from "../components/HeroSection.astro";
 import Layout from "../layouts/Layout.astro";
-import ThreeDArkx from "../components/designs/ThreeDArkx.astro";
-import GalaxyButton from "../components/designs/GalaxyButton.astro";
+import Content from "../components/HeroSectionContent/Content.astro";
+import LogoInfiniteScrollComponent from "../components/LogoInfiniteScrollComponent.astro";
+import Chroma from "../components/designs/Chroma.astro";
 import Navbar from "../components/Navbar.astro";
 ---
 
 <Layout title="Welcome to Arkx Talent Factory.">
-  <!-- <Navbar /> -->
-  <div class="overflow-hidden realtive top-0 right-0">
-    <ThreeDArkx />
-    
+  <Navbar />
+  <!-- <NavbarComponent /> -->
+  <div class="h-screen absolute w-full inset-0">
+    <Chroma />
   </div>
+  <HeroSection>
+    <Content />
+    <div class="w-full flex items-center justify-center">
+      <LogoInfiniteScrollComponent />
+    </div>
+  </HeroSection>
+  <div class="h-[50vh] w-full"></div>
+  <div class="h-[100vh] w-full"></div>
 </Layout>

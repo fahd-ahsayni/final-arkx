@@ -1,16 +1,57 @@
 ---
-import RolatingText from "./RolatingText.astro";
+import KeyboardText from "../designs/KeyboardText.astro";
+import Mobile from "./Mobile.astro";
+
+const lettersDesktop = [
+  "T",
+  "E",
+  "C",
+  "H",
+  "N",
+  "O",
+  "L",
+  "O",
+  "G",
+  "I",
+  "C",
+  "A",
+  "L",
+];
 ---
 
-<section class="mt-52 w-full md:block hidden">
-  <div class="text-center text-white text-[8vw] font-medium tracking-[-0.3vw]">
-    <h2>Unleach African's</h2>
-    <h2 class="leading-[6vw]"><span class=""> Tech</span> Potential</h2>
+<section class="mx-auto max-w-full pt-0 sm:pt-24 lg:pt-56">
+  <!-- <div class="sm:mb-8 flex justify-center">
+    <div
+      class="relative rounded-full px-3 md:py-1 md:text-sm text-[9px] leading-6 text-gray-300 ring-1 ring-gray-100/10 hover:ring-gray-100/20"
+    >
+      Announcing our next round of funding. <a
+        href="#"
+        class="font-semibold text-[#ff5000]"
+        ><span class="absolute inset-0" aria-hidden="true"></span>Read more <span
+          aria-hidden="true">&rarr;</span
+        ></a
+      >
+    </div>
+  </div> -->
+  <!-- DESKTOP -->
+  <div
+    class="text-center text-white lg:-mt-10 lg:text-[6vw] text-[7vw] font-medium tracking-[-0.3vw] md:block hidden"
+  >
+    <h2>Harness Africa's</h2>
+    <h2 class="lg:leading-[6vw] leading-[10vw]">
+      <KeyboardText letters={lettersDesktop} />
+       Potential.
+    </h2>
   </div>
-  <h3 class="text-center text-[1.2vw] text-gray-200 mt-8">
-    Make <span class="font-semibold">world-class career</span> 🚀 pathways in
+  <!-- MOBILE -->
+  <Mobile />
+
+  <!-- <h3
+    class="md:text-center text-start px-8 lg:text-[1.2vw] md:text-base text-sm md:mt-8 mt-4 text-gray-200"
+  >
+    Make <span class="font-semibold">world-class career</span> pathways in
     technology accessible at scale.
-  </h3>
+  </h3> -->
 </section>
 <div>
   <!-- <RolatingText /> -->

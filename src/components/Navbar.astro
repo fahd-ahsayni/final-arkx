@@ -1,11 +1,362 @@
 ---
 import { Image } from "astro:assets";
-import logo from "../assets/logos/Logo_complet.png";
+import logoArkx from "../assets/logos/Logo_complet.png";
 ---
 
 <nav
-  class="abolute top-0  z-10 h-max w-full max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4"
+  class="bg-[#1A1A1A] flex items-center justify-between lg:px-12 px-8 md:shadow-none lg:border-b lg:border-gray-50 z-[999] absolute top-0 left-0 h-20 md:h-24 w-full"
 >
-
-    <Image src={logo} alt=" " class="w-52 h-auto" />
+  <Image src={logoArkx} alt="" class="h-10 w-auto" />
+  <div>
+    <div class="z-[9999]">
+      <input id="toggle-btn" type="checkbox" />
+      <label id="hamburger" class="toggle toggle2" for="toggle-btn">
+        <div id="bar4" class="bars"></div>
+        <div id="bar5" class="bars"></div>
+        <div id="bar6" class="bars"></div>
+      </label>
+    </div>
+  </div>
+  <nav class="nav">
+    <div class="nav__inner">
+      <div class="nav--transition-slide"></div>
+      <div class="nav--items">
+        <div class="nav--item">
+          <div class="nav--item-link">
+            <a href="#" class="nav--link">
+              <span class="nav--link-text" data-text="projects">projects</span>
+              <div class="nav--link-icon">
+                <svg class="icon">
+                  <use xlink:href="#arrow-right"></use>
+                </svg>
+              </div>
+            </a>
+          </div>
+          <div class="nav--item-line"></div>
+        </div>
+        <div class="nav--item">
+          <div class="nav--item-link">
+            <a href="#" class="nav--link">
+              <span class="nav--link-text" data-text="about">about</span>
+              <div class="nav--link-icon">
+                <svg class="icon">
+                  <use xlink:href="#arrow-right"></use>
+                </svg>
+              </div>
+            </a>
+          </div>
+          <div class="nav--item-line"></div>
+        </div>
+        <div class="nav--item">
+          <div class="nav--item-link">
+            <a href="#" class="nav--link">
+              <span class="nav--link-text" data-text="contact">contact</span>
+              <div class="nav--link-icon">
+                <svg class="icon">
+                  <use xlink:href="#arrow-right"></use>
+                </svg>
+              </div>
+            </a>
+          </div>
+          <div class="nav--item-line"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
 </nav>
+
+<style>
+  .nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 5;
+  }
+  .nav .nav__inner {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  .nav .nav__inner .nav--items {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav .nav__inner .nav--items .nav--item {
+    position: relative;
+    width: 50%;
+    height: 120px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+  }
+  .nav .nav__inner .nav--items .nav--item-link .nav--link {
+    display: block;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transform: translateY(100%);
+  }
+  .nav .nav__inner .nav--items .nav--item-link .nav--link-text {
+    height: 100%;
+    position: relative;
+    font-weight: 800;
+    font-size: 85px;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    color: transparent;
+    -webkit-text-stroke: 2px #ebebeb;
+  }
+  .nav .nav__inner .nav--items .nav--item-link .nav--link-text::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #ebebeb;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    transition: clip-path 400ms ease;
+  }
+  .nav .nav__inner .nav--items .nav--item-link .nav--link-icon {
+    transform: translateX(-35%);
+    opacity: 0;
+    transition:
+      transform 250ms ease,
+      opacity 100ms linear;
+    margin-left: 25px;
+  }
+  .nav .nav__inner .nav--items .nav--item-link .nav--link-icon svg {
+    width: 100px;
+    height: 100px;
+    fill: #ebebeb;
+  }
+  .nav
+    .nav__inner
+    .nav--items
+    .nav--item-link
+    .nav--link:hover
+    .nav--link-text::after {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  .nav
+    .nav__inner
+    .nav--items
+    .nav--item-link
+    .nav--link:hover
+    .nav--link-icon {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  .nav .nav__inner .nav--items .nav--item-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: #ebebeb;
+    transform: scaleX(0);
+  }
+  .nav .nav__inner .nav--transition-slide {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #131313;
+    transform: scaleX(0);
+  }
+
+  .info {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    font-family: "Montserrat";
+    font-size: 0.875rem;
+    z-index: 1;
+  }
+
+  .support {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    padding: 10px;
+    display: flex;
+  }
+  .support a {
+    margin: 0 10px;
+    color: #333333;
+    font-size: 1.8rem;
+    backface-visibility: hidden;
+    transition: all 150ms ease;
+  }
+  .support a:hover {
+    transform: scale(1.1);
+  }
+  #toggle-btn {
+    display: none;
+  }
+  .toggle2 {
+    z-index: 9995;
+    position: relative;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition-duration: 0.5s;
+  }
+
+  .bars {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    z-index: 200;
+    border-radius: 6px;
+  }
+
+  #bar5 {
+    transition-duration: 0.8s;
+  }
+
+  #bar4,
+  #bar6 {
+    width: 80%;
+  }
+
+  #toggle-btn:checked + .toggle2 .bars {
+    position: absolute;
+    transition-duration: 0.5s;
+  }
+
+  #toggle-btn:checked + .toggle2 #bar5 {
+    transform: scaleX(0);
+    transition-duration: 0.5s;
+  }
+
+  #toggle-btn:checked + .toggle2 #bar4 {
+    width: 100%;
+    transform: rotate(45deg);
+    transition-duration: 0.5s;
+  }
+
+  #toggle-btn:checked + .toggle2 #bar6 {
+    width: 100%;
+    transform: rotate(-45deg);
+    transition-duration: 0.5s;
+  }
+
+  #toggle-btn:checked + .toggle2 {
+    transition-duration: 0.5s;
+    transform: rotate(180deg);
+  }
+</style>
+
+<script>
+  import gsap from "gsap";
+
+  const btn = document.querySelector("#toggle-btn");
+
+  btn.addEventListener("click", () => {
+    if (btn.classList.contains("active")) {
+      btn.classList.remove("active");
+      hide();
+    } else {
+      btn.classList.add("active");
+      show();
+    }
+  });
+
+  function show() {
+    let tl = gsap.timeline();
+
+    gsap.set(".nav__inner, .menu-btn", {
+      pointerEvents: "none",
+    });
+
+    tl.fromTo(
+      ".nav--transition-slide",
+      {
+        scaleX: 0,
+        transformOrigin: "left center",
+      },
+      {
+        duration: 0.5,
+        scaleX: 1,
+        ease: "Expo.inOut",
+      }
+    )
+      .set(".nav__inner, .menu-btn", {
+        pointerEvents: "all",
+      })
+      .fromTo(
+        ".nav--item-line",
+        {
+          scaleX: 0,
+          transformOrigin: "left center",
+        },
+        {
+          duration: 0.65,
+          scaleX: 1,
+          ease: "Expo.inOut",
+          stagger: 0.15,
+        }
+      )
+      .fromTo(
+        ".nav--link",
+        {
+          translateY: "100%",
+        },
+        {
+          duration: 2.25,
+          translateY: 0,
+          ease: "elastic.inOut",
+          stagger: 0.15,
+        },
+        "-=1.65"
+      );
+  }
+
+  function hide() {
+    let tl = gsap.timeline();
+
+    gsap.set(".nav__inner, .menu-btn", {
+      pointerEvents: "none",
+    });
+
+    tl.to(".nav--item-line", {
+      duration: 0.6,
+      scaleX: 0,
+      transformOrigin: "right center",
+      ease: "Expo.inOut",
+      stagger: -0.15,
+    })
+      .to(
+        ".nav--link",
+        {
+          duration: 0.35,
+          translateY: "100%",
+          ease: "Expo.inOut",
+          stagger: -0.15,
+        },
+        0
+      )
+      .to(".nav--transition-slide", {
+        duration: 0.5,
+        transformOrigin: "right center",
+        scaleX: 0,
+        ease: "Expo.inOut",
+      })
+      .set(" .menu-btn", {
+        pointerEvents: "all",
+      });
+  }
+</script>

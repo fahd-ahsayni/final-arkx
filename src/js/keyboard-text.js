@@ -1,0 +1,1 @@
+const keys=document.querySelectorAll(".key");function pressRandomKey(){const e=keys[Math.floor(Math.random()*keys.length)];e.style.animation="pressDown 0.2s ease-in-out",e.onanimationend=()=>{e.style.animation="",setTimeout(pressRandomKey,100+300*Math.random())}}pressRandomKey();

@@ -1,0 +1,34 @@
+---
+const {letters} = Astro.props;
+---
+
+<div class="keyboard">
+  {letters.map((letter) => <span class="key">{letter}</span>)}
+</div>
+
+<style>
+  @tailwind components;
+  @layer components {
+    .key {
+      @apply text-[9vw];
+    }
+  }
+  .key {
+    display: inline-block;
+    transition: transform 0.2s;
+    letter-spacing: -0.5vw;
+    font-size: 9vw;
+    color: white;
+  }
+  @keyframes pressDown {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+  }
+</style>
+
+<script src="../../js/keyboard-text.js"></script>

@@ -3,11 +3,11 @@ import { Image } from "astro:assets";
 import {partnerLogos} from "../constants"
 ---
 
-<div id="logoScroll" class="scroller max-w-3xl mt-8" data-speed="fast">
+<div id="logoScroll" class="scroller max-w-7xl md:mt-16 mt-16" data-speed="fast">
   <ul class="tag-list scroller__inner">
     {
       partnerLogos.map((logo) => (
-        <li class="w-36 aspect-video  cursor-pointer grayscale-[30%] flex items-center justify-center bg-gray-500/10 border border-white/20 shadow-md py-2 px-3 rounded">
+        <li class="md:w-36 w-28 aspect-video cursor-pointer grayscale-[30%] hover:grayscale-0 flex items-center justify-center bg-gray-600/10 border border-white/20 shadow-md py-2 px-3 rounded">
           <Image loading="lazy" height={50} class="object-fill" src={logo.logo} alt={logo.name} />
         </li>
       ))
@@ -21,7 +21,7 @@ import {partnerLogos} from "../constants"
     padding-block: 1rem;
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 0.2rem;
   }
 
   .scroller[data-animated="true"] {
@@ -42,6 +42,9 @@ import {partnerLogos} from "../constants"
     );
   }
 
+  .scroller[data-animated="true"]:hover .scroller__inner {
+  animation-play-state: paused;
+}
   .scroller[data-animated="true"] .scroller__inner {
     width: max-content;
     flex-wrap: nowrap;
@@ -71,19 +74,8 @@ import {partnerLogos} from "../constants"
     }
   }
 
-  /* general styles */
-
-  .tag-list {
-    margin: 0;
-    padding-inline: 0;
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
   .tag-list li {
-    margin: 2rem;
+    margin: 0.5rem;
   }
 </style>
 
