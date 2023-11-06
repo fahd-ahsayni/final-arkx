@@ -3,12 +3,18 @@ import { Image } from "astro:assets";
 import logoArkx from "../assets/logos/Logo_complet.png";
 ---
 
-<nav
-  class="bg-[#1A1A1A] flex items-center justify-between lg:px-12 px-8 md:shadow-none lg:border-b lg:border-gray-50 z-[999] absolute top-0 left-0 h-20 md:h-24 w-full"
+<header
+  class="bg-[#1A1A1A] flex items-center justify-between lg:px-0 px-2.5 md:shadow-none border-b border-gray-50 z-[999] absolute top-0 left-0 h-20 md:h-20 w-full"
 >
-  <Image src={logoArkx} alt="" class="h-10 w-auto" />
-  <div>
-    <div class="z-[9999]">
+  <Image src={logoArkx} alt="" class="md:h-10 h-8 lg:ml-20 w-auto" />
+
+  <div class="flex items-center h-full gap-6">
+    <a href="#"
+      class="px-8 py-2 rounded-full text-white bg-transparent border-2 border-white font-medium"
+    >
+      Contact us
+    </a>
+    <div class="z-[99] border-2 border-gray-50 p-1.5 lg:mr-6 rounded-full">
       <input id="toggle-btn" type="checkbox" />
       <label id="hamburger" class="toggle toggle2" for="toggle-btn">
         <div id="bar4" class="bars"></div>
@@ -63,9 +69,29 @@ import logoArkx from "../assets/logos/Logo_complet.png";
       </div>
     </div>
   </nav>
-</nav>
+</header>
 
 <style>
+  @tailwind components;
+  @layer components {
+    .nav--link-text {
+      @apply font-medium h-full relative md:text-[6vw] text-[12vw] capitalize
+      tracking-tighter;
+      color: #fff;
+      /* -webkit-text-stroke: 1.5px #fff; */
+    }
+    .nav--item {
+      @apply relative lg:w-1/2 w-5/6 lg:h-[150px] h-[100px];
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
+    .toggle2 {
+      @apply lg:w-[30px] lg:h-[30px] w-[20px] h-[20px];
+    }
+  }
+  .hidden {
+    display: none;
+  }
   .nav {
     position: fixed;
     left: 0;
@@ -87,13 +113,6 @@ import logoArkx from "../assets/logos/Logo_complet.png";
     align-items: center;
     justify-content: center;
   }
-  .nav .nav__inner .nav--items .nav--item {
-    position: relative;
-    width: 50%;
-    height: 120px;
-    margin-bottom: 2rem;
-    overflow: hidden;
-  }
   .nav .nav__inner .nav--items .nav--item-link .nav--link {
     display: block;
     text-decoration: none;
@@ -101,22 +120,12 @@ import logoArkx from "../assets/logos/Logo_complet.png";
     align-items: center;
     transform: translateY(100%);
   }
-  .nav .nav__inner .nav--items .nav--item-link .nav--link-text {
-    height: 100%;
-    position: relative;
-    font-weight: 800;
-    font-size: 85px;
-    text-transform: uppercase;
-    letter-spacing: 6px;
-    color: transparent;
-    -webkit-text-stroke: 2px #ebebeb;
-  }
   .nav .nav__inner .nav--items .nav--item-link .nav--link-text::after {
     content: attr(data-text);
     position: absolute;
     left: 0;
     top: 0;
-    color: #ebebeb;
+    color: #fff;
     clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
     transition: clip-path 400ms ease;
   }
@@ -131,7 +140,7 @@ import logoArkx from "../assets/logos/Logo_complet.png";
   .nav .nav__inner .nav--items .nav--item-link .nav--link-icon svg {
     width: 100px;
     height: 100px;
-    fill: #ebebeb;
+    fill: #fff;
   }
   .nav
     .nav__inner
@@ -154,9 +163,9 @@ import logoArkx from "../assets/logos/Logo_complet.png";
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 2px;
+    height: 1px;
     width: 100%;
-    background: #ebebeb;
+    background: #dadada;
     transform: scaleX(0);
   }
   .nav .nav__inner .nav--transition-slide {
@@ -165,37 +174,8 @@ import logoArkx from "../assets/logos/Logo_complet.png";
     top: 0;
     width: 100%;
     height: 100%;
-    background: #131313;
+    background: #1a1a1a;
     transform: scaleX(0);
-  }
-
-  .info {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    font-weight: bold;
-    font-family: "Montserrat";
-    font-size: 0.875rem;
-    z-index: 1;
-  }
-
-  .support {
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-    padding: 10px;
-    display: flex;
-  }
-  .support a {
-    margin: 0 10px;
-    color: #333333;
-    font-size: 1.8rem;
-    backface-visibility: hidden;
-    transition: all 150ms ease;
-  }
-  .support a:hover {
-    transform: scale(1.1);
   }
   #toggle-btn {
     display: none;
@@ -204,20 +184,18 @@ import logoArkx from "../assets/logos/Logo_complet.png";
     z-index: 9995;
     position: relative;
     top: 0;
-    width: 40px;
-    height: 40px;
     cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 5px;
     transition-duration: 0.5s;
   }
 
   .bars {
     width: 100%;
-    height: 3px;
+    height: 2px;
     background-color: #fff;
     z-index: 200;
     border-radius: 6px;
@@ -264,13 +242,19 @@ import logoArkx from "../assets/logos/Logo_complet.png";
   import gsap from "gsap";
 
   const btn = document.querySelector("#toggle-btn");
+  const nav = document.querySelector("nav");
 
   btn.addEventListener("click", () => {
     if (btn.classList.contains("active")) {
-      btn.classList.remove("active");
       hide();
+      btn.classList.remove("active");
+      setTimeout(() => {
+        nav.classList.add("hidden");
+      }, 1000);
     } else {
+      nav.classList.remove("hidden");
       btn.classList.add("active");
+
       show();
     }
   });
@@ -278,7 +262,7 @@ import logoArkx from "../assets/logos/Logo_complet.png";
   function show() {
     let tl = gsap.timeline();
 
-    gsap.set(".nav__inner, .menu-btn", {
+    gsap.set(".nav__inner, #toggle-btn", {
       pointerEvents: "none",
     });
 
@@ -294,7 +278,7 @@ import logoArkx from "../assets/logos/Logo_complet.png";
         ease: "Expo.inOut",
       }
     )
-      .set(".nav__inner, .menu-btn", {
+      .set(".nav__inner, #toggle-btn", {
         pointerEvents: "all",
       })
       .fromTo(
@@ -316,7 +300,7 @@ import logoArkx from "../assets/logos/Logo_complet.png";
           translateY: "100%",
         },
         {
-          duration: 2.25,
+          duration: 2,
           translateY: 0,
           ease: "elastic.inOut",
           stagger: 0.15,
@@ -328,13 +312,14 @@ import logoArkx from "../assets/logos/Logo_complet.png";
   function hide() {
     let tl = gsap.timeline();
 
-    gsap.set(".nav__inner, .menu-btn", {
+    gsap.set(".nav__inner, #toggle-btn", {
       pointerEvents: "none",
     });
 
     tl.to(".nav--item-line", {
       duration: 0.6,
       scaleX: 0,
+
       transformOrigin: "right center",
       ease: "Expo.inOut",
       stagger: -0.15,
@@ -355,7 +340,7 @@ import logoArkx from "../assets/logos/Logo_complet.png";
         scaleX: 0,
         ease: "Expo.inOut",
       })
-      .set(" .menu-btn", {
+      .set("#toggle-btn", {
         pointerEvents: "all",
       });
   }

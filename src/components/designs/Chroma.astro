@@ -4,11 +4,8 @@
 
 <main class="dark">
   <div
-    class="relative flex flex-col md:h-[50vh] h-[40vh] items-center justify-center transition-bg"
+    class="jumbo after:mix-blend-difference absolute -inset-[10px] lg:h-[50vh] h-[40vh] opacity-50"
   >
-    <div class="absolute inset-0 overflow-hidden">
-      <div class="jumbo after:mix-blend-difference absolute -inset-[10px] opacity-50"></div>
-    </div>
   </div>
 </main>
 
@@ -29,26 +26,26 @@
   .jumbo {
     --stripes: repeating-linear-gradient(
       100deg,
-      #1A1A1A 0%,
-      #1A1A1A 7%,
+      #1a1a1a 0%,
+      #1a1a1a 7%,
       transparent 10%,
       transparent 12%,
-      #1A1A1A 16%
+      #1a1a1a 16%
     );
     --stripesDark: repeating-linear-gradient(
       100deg,
-      #1A1A1A 0%,
-      #1A1A1A 7%,
+      #1a1a1a 0%,
+      #1a1a1a 7%,
       transparent 10%,
       transparent 12%,
-      #1A1A1A 16%
+      #1a1a1a 16%
     );
     --rainbow: repeating-linear-gradient(
       100deg,
       #60a5fa 10%,
       #5c00f9 15%,
       #a64aff 20%,
-      #6A00FF 25%,
+      #6a00ff 25%,
       #330072 30%
     );
     background-image: var(--stripes), var(--rainbow);
@@ -59,7 +56,11 @@
 
     filter: blur(10px) invert(100%);
 
-    mask-image: radial-gradient(ellipse at 100% 0%, #1A1A1A 40%, transparent 70%);
+    mask-image: radial-gradient(
+      ellipse at 100% 0%,
+      #1a1a1a 40%,
+      transparent 70%
+    );
 
     pointer-events: none;
   }
