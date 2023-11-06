@@ -1,18 +1,22 @@
-import anapec from "../assets/logos/anapec.png";
-import atos from "../assets/logos/atos.png";
-import capgemini from "../assets/logos/capgemini.png";
-import cdg from "../assets/logos/cdg.png";
-import dxc from "../assets/logos/dxc.png";
-import efe from "../assets/logos/efe.png";
-import giz from "../assets/logos/giz.png";
-import laStartupStation from "../assets/logos/laStartupStation.png";
-import mnc from "../assets/logos/mnc.png";
-import technopark from "../assets/logos/technopark.png";
+import anapec from "../assets/logos/anapec.svg";
+import atos from "../assets/logos/atos.svg";
+import capgemini from "../assets/logos/capgemini.svg";
+import cdg from "../assets/logos/cdg.svg";
+import dxc from "../assets/logos/dxc.svg";
+import efe from "../assets/logos/efe.svg";
+import giz from "../assets/logos/giz.svg";
+import laStartupStation from "../assets/logos/laStartupStation.svg";
+import mnc from "../assets/logos/mnc.svg";
+import technopark from "../assets/logos/technopark.svg";
 
 export const partnerLogos = [
   {
     name: "Anapec",
     logo: anapec,
+  },
+  {
+    name: "Giz",
+    logo: giz,
   },
   {
     name: "Atos",

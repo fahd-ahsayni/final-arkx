@@ -14,8 +14,6 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <link href="https://fonts.cdnfonts.com/css/hubot-sans" rel="stylesheet" />
-
     <title>{title}</title>
   </head>
   <body>
@@ -24,11 +22,12 @@ const { title } = Astro.props;
 </html>
 
 <style is:global>
+  @import url("https://fonts.cdnfonts.com/css/hubot-sans");
   * {
     font-family: "Hubot-Sans", sans-serif;
   }
   html {
-    background: #1A1A1A;
+    background: #1a1a1a;
     scroll-behavior: smooth;
   }
 
