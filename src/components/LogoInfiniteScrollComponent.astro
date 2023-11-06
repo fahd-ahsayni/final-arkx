@@ -3,12 +3,12 @@ import { Image } from "astro:assets";
 import {partnerLogos} from "../constants"
 ---
 
-<div id="logoScroll" class="scroller max-w-3xl" data-speed="fast">
+<div id="logoScroll" class="scroller max-w-3xl mt-8" data-speed="fast">
   <ul class="tag-list scroller__inner">
     {
       partnerLogos.map((logo) => (
-        <li class="w-36 aspect-video">
-          <Image loading="lazy" class="w-full h-full object-contain transition-all duration-500 cursor-pointer" src={logo.logo} alt={logo.name} />
+        <li class="w-36 aspect-video  cursor-pointer grayscale-[30%] flex items-center justify-center bg-gray-500/10 border border-white/20 shadow-md py-2 px-3 rounded">
+          <Image loading="lazy" height={50} class="object-fill" src={logo.logo} alt={logo.name} />
         </li>
       ))
     }
