@@ -11,27 +11,34 @@ import Navbar from "../components/Navbar.astro";
   <Navbar />
   <!-- <NavbarComponent /> -->
   <div
-    class="h-full w-[1.2px] lg:block hidden absolute top-0 left-20 z-10 bg-gray-50"
+    class="h-[120vh] w-[1.8px] lg:block hidden absolute top-0 left-20 z-10 bg-gray-50"
   >
   </div>
-  <div class="h-screen absolute w-full inset-0">
+  <div class="absolute w-full inset-0">
     <Chroma />
   </div>
   <HeroSection>
     <Content />
-    <div class="max-w-5xl mx-auto">
-      <h3
-      class="md:text-center !leading-[2vw] text-start px-8 lg:text-[1.5vw] md:text-base text-sm md:mt-8 mt-4 text-gray-200"
-    >
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet reiciendis
-      voluptatem asperiores odio.
-    </h3>
-    </div>
-    <div class="w-full flex items-center justify-center">
-      <LogoInfiniteScrollComponent />
-    </div>
-  
   </HeroSection>
-  <div class="h-[50vh] w-full"></div>
-  <div class="h-[100vh] w-full"></div>
+
+  <div class="relative w-full lg:w-11/12">
+    <div class="lg:h-[40vh] relative w-full">
+      <div
+        class=" w-full relative lg:border-2 border-l-0 rounded-tr-3xl h-full lg:left-20"
+      >
+        <div class="w-full h-full flex flex-col justify-center items-center">
+          <h2
+            class="text-[7vw] mb-8 md:text-[2vw] text-gray-100 text-center font-medium"
+          >
+            Our <span class="px-1.5 py-1 bg-gradient-to-r from-[#5c00f9]"
+              >Partners</span
+            >
+          </h2>
+
+          <LogoInfiniteScrollComponent />
+        </div>
+      </div>
+    </div>
+    <div class="w-full relative lg:left-20 border-r-2 h-screen"></div>
+  </div>
 </Layout>

@@ -4,7 +4,7 @@ import logoArkx from "../assets/logos/Logo_complet.png";
 ---
 
 <header
-  class="bg-[#1A1A1A] flex items-center justify-between lg:px-0 px-2.5 md:shadow-none border-b border-gray-50 z-[999] absolute top-0 left-0 h-20 md:h-20 lg:w-full w-[102%]"
+  class="bg-[#1A1A1A] flex items-center justify-between lg:px-0 px-2.5 md:shadow-none border-b-2 border-gray-100 z-[999] absolute top-0 left-0 h-20 md:h-20 lg:w-full w-[102%]"
 >
   <Image src={logoArkx} alt="" class="md:h-10 h-8 lg:ml-20 w-auto" />
   <div class="flex items-center h-full gap-6">
@@ -118,7 +118,7 @@ import logoArkx from "../assets/logos/Logo_complet.png";
     text-decoration: none;
     display: flex;
     align-items: center;
-    transform: translateY(100%);
+    transform: translateY(110%);
   }
   .nav .nav__inner .nav--items .nav--item-link .nav--link-text::after {
     content: attr(data-text);
@@ -297,7 +297,7 @@ import logoArkx from "../assets/logos/Logo_complet.png";
       .fromTo(
         ".nav--link",
         {
-          translateY: "100%",
+          translateY: "110%",
         },
         {
           duration: 2,
@@ -328,7 +328,7 @@ import logoArkx from "../assets/logos/Logo_complet.png";
         ".nav--link",
         {
           duration: 0.35,
-          translateY: "100%",
+          translateY: "110%",
           ease: "Expo.inOut",
           stagger: -0.15,
         },
