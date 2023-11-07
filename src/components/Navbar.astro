@@ -4,17 +4,17 @@ import logoArkx from "../assets/logos/Logo_complet.png";
 ---
 
 <header
-  class="bg-[#1A1A1A] flex items-center justify-between lg:px-0 px-2.5 md:shadow-none border-b border-gray-50 z-[999] absolute top-0 left-0 h-20 md:h-20 w-full"
+  class="bg-[#1A1A1A] flex items-center justify-between lg:px-0 px-2.5 md:shadow-none border-b border-gray-50 z-[999] absolute top-0 left-0 h-20 md:h-20 lg:w-full w-[102%]"
 >
   <Image src={logoArkx} alt="" class="md:h-10 h-8 lg:ml-20 w-auto" />
-
   <div class="flex items-center h-full gap-6">
-    <a href="#"
-      class="px-8 py-2 rounded-full text-white bg-transparent border-2 border-white font-medium"
+    <a
+      href="#"
+      class="px-8 py-2 opacity-0 md:opacity-100 text-sm rounded-full text-white bg-transparent border-2 border-white font-medium"
     >
       Contact us
     </a>
-    <div class="z-[99] border-2 border-gray-50 p-1.5 lg:mr-6 rounded-full">
+    <div class="z-[99] border-2 border-gray-50 p-1.5 md:mr-6 rounded-full">
       <input id="toggle-btn" type="checkbox" />
       <label id="hamburger" class="toggle toggle2" for="toggle-btn">
         <div id="bar4" class="bars"></div>
@@ -76,12 +76,12 @@ import logoArkx from "../assets/logos/Logo_complet.png";
   @layer components {
     .nav--link-text {
       @apply font-medium h-full relative md:text-[6vw] text-[12vw] capitalize
-      tracking-tighter;
+      tracking-tighter hover:scale-[1.02] transition-all duration-300;
       color: #fff;
       /* -webkit-text-stroke: 1.5px #fff; */
     }
     .nav--item {
-      @apply relative lg:w-1/2 w-5/6 lg:h-[150px] h-[100px];
+      @apply relative lg:w-1/2 w-5/6 lg:h-[150px] h-[100px] px-4;
       margin-bottom: 2rem;
       overflow: hidden;
     }

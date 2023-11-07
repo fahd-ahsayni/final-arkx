@@ -11,7 +11,7 @@ import Navbar from "../components/Navbar.astro";
   <Navbar />
   <!-- <NavbarComponent /> -->
   <div
-    class="h-full w-[1.2px] md:block hidden absolute top-0 left-20 z-10 bg-gray-50"
+    class="h-full w-[1.2px] lg:block hidden absolute top-0 left-20 z-10 bg-gray-50"
   >
   </div>
   <div class="h-screen absolute w-full inset-0">
@@ -19,9 +19,18 @@ import Navbar from "../components/Navbar.astro";
   </div>
   <HeroSection>
     <Content />
+    <div class="max-w-5xl mx-auto">
+      <h3
+      class="md:text-center !leading-[2vw] text-start px-8 lg:text-[1.5vw] md:text-base text-sm md:mt-8 mt-4 text-gray-200"
+    >
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet reiciendis
+      voluptatem asperiores odio.
+    </h3>
+    </div>
     <div class="w-full flex items-center justify-center">
       <LogoInfiniteScrollComponent />
     </div>
+  
   </HeroSection>
   <div class="h-[50vh] w-full"></div>
   <div class="h-[100vh] w-full"></div>
