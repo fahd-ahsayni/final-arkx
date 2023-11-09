@@ -1,29 +1,28 @@
 ---
 import { Image } from "astro:assets";
-import logoArkx from "../assets/logos/Logo_complet.png";
+import logoArkx from "../assets/logos/Logo_complet.svg";
 ---
 
 <header
-  class="bg-[#1A1A1A] flex items-center justify-between lg:px-0 px-2.5 md:shadow-none border-b-2 border-gray-100 z-[999] absolute top-0 left-0 h-20 md:h-20 lg:w-full w-[102%]"
+  class="backdrop-blur-xl lg:px-8 px-6 shadow fixed top-0 left-0 w-screen py-4 z-[50]"
 >
-  <Image src={logoArkx} alt="" class="md:h-10 h-8 lg:ml-20 w-auto" />
-  <div class="flex items-center h-full gap-6">
-    <a
-      href="#"
-      class="px-8 py-2 opacity-0 md:opacity-100 text-sm rounded-full text-white bg-transparent border-2 border-white font-medium"
-    >
-      Contact us
-    </a>
-    <div class="z-[99] border-2 border-gray-50 p-1.5 md:mr-6 rounded-full">
-      <input id="toggle-btn" type="checkbox" />
-      <label id="hamburger" class="toggle toggle2" for="toggle-btn">
-        <div id="bar4" class="bars"></div>
-        <div id="bar5" class="bars"></div>
-        <div id="bar6" class="bars"></div>
-      </label>
+  <div class="max-w-[100rem] mx-auto flex items-center justify-between -z-[999]">
+    <div class="flex items-end gap-2.5">
+      <Image src={logoArkx} alt="" class="h-auto w-20" />
+      <p class="text-white font-medium">Talent Factory</p>
+    </div>
+    <div class="flex items-center h-full">
+      <div class="z-[99] border-[3px] border-white p-1.5 rounded-full">
+        <input id="toggle-btn" type="checkbox" />
+        <label id="hamburger" class="toggle toggle2" for="toggle-btn">
+          <div id="bar4" class="bars"></div>
+          <div id="bar5" class="bars"></div>
+          <div id="bar6" class="bars"></div>
+        </label>
+      </div>
     </div>
   </div>
-  <nav class="nav">
+  <nav class="nav relative z-[9999]">
     <div class="nav__inner">
       <div class="nav--transition-slide"></div>
       <div class="nav--items">
@@ -74,6 +73,9 @@ import logoArkx from "../assets/logos/Logo_complet.png";
 <style>
   @tailwind components;
   @layer components {
+    .nav__inner {
+      @apply z-[99] relative;
+    }
     .nav--link-text {
       @apply font-medium h-full relative md:text-[6vw] text-[12vw] capitalize
       tracking-tighter hover:scale-[1.02] transition-all duration-300;
@@ -98,7 +100,7 @@ import logoArkx from "../assets/logos/Logo_complet.png";
     top: 0;
     width: 100%;
     height: 100vh;
-    z-index: 5;
+    z-index: -999;
   }
   .nav .nav__inner {
     width: 100%;
@@ -174,7 +176,7 @@ import logoArkx from "../assets/logos/Logo_complet.png";
     top: 0;
     width: 100%;
     height: 100%;
-    background: #1a1a1a;
+    background: #161616;
     transform: scaleX(0);
   }
   #toggle-btn {
@@ -243,6 +245,8 @@ import logoArkx from "../assets/logos/Logo_complet.png";
 
   const btn = document.querySelector("#toggle-btn");
   const nav = document.querySelector("nav");
+
+  nav.classList.add("hidden");
 
   btn.addEventListener("click", () => {
     if (btn.classList.contains("active")) {

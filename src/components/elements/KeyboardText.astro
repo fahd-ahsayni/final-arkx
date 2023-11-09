@@ -1,0 +1,46 @@
+---
+const letters = [
+  "T",
+  "E",
+  "C",
+  "H",
+  "N",
+  "O",
+  "L",
+  "O",
+  "G",
+  "I",
+  "C",
+  "A",
+  "L",
+];
+---
+
+<div class="keyboard -z-10">
+  {letters.map((letter) => <span class="key">{letter}</span>)}
+</div>
+
+<style>
+  @tailwind components;
+  @layer components {
+    .key {
+      @apply inline-block tracking-[-0.5vw] lg:text-[7vw] text-[9vw] text-white
+      font-semibold lg:leading-[8vw];
+    }
+  }
+
+  .key {
+    color: white;
+  }
+  @keyframes pressDown {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+  }
+</style>
+
+<script src="../../js/keyboard-text.js"></script>

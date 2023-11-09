@@ -1,44 +1,33 @@
 ---
-import HeroSection from "../components/HeroSection.astro";
-import Layout from "../layouts/Layout.astro";
-import Content from "../components/HeroSectionContent/Content.astro";
-import LogoInfiniteScrollComponent from "../components/LogoInfiniteScrollComponent.astro";
 import Chroma from "../components/designs/Chroma.astro";
 import Navbar from "../components/Navbar.astro";
+import Layout from "../layouts/Layout.astro";
+import HeroSection from "../components/HeroSection.astro";
+import LogoInfiniteScrollComponent from "../components/LogoInfiniteScrollComponent.astro";
+import MarqueeImages from "../components/elements/MarqueeImages.astro";
 ---
 
 <Layout title="Welcome to Arkx Talent Factory.">
   <Navbar />
-  <!-- <NavbarComponent /> -->
-  <div
-    class="h-[120vh] w-[1.8px] lg:block hidden absolute top-0 left-20 z-10 bg-gray-50"
-  >
-  </div>
-  <div class="absolute w-full inset-0">
-    <Chroma />
-  </div>
-  <HeroSection>
-    <Content />
-  </HeroSection>
-
-  <div class="relative w-full lg:w-11/12">
-    <div class="lg:h-[40vh] relative w-full">
-      <div
-        class="w-full relative lg:border-2 border-l-0 rounded-tr-3xl h-full lg:left-20"
-      >
-        <div class="w-full h-full flex flex-col justify-center items-center">
-          <h2
-            class="text-[7vw] mb-8 md:text-[2vw] text-gray-100 text-center font-medium"
-          >
-            Our <span class="px-1.5 py-1 bg-gradient-to-r from-[#5c00f9]"
-              >Partners</span
-            >
-          </h2>
-
-          <LogoInfiniteScrollComponent />
-        </div>
-      </div>
+  <Chroma />
+  <HeroSection />
+  <MarqueeImages />
+  <section class="w-full">
+    <h2></h2>
+    <h5></h5>
+    <div>
+      
     </div>
-    <div class="w-full relative lg:left-20 lg:border-r-2 h-screen"></div>
-  </div>
+  </section>
+  <!-- <section class="w-screen h-1/4 flex flex-col items-center justify-center">
+    <div class="max-w-7xl text-center mx-auto pb-4">
+      <h3 class="text-2xl text-white">
+        ARKx is Supported by a Network of World-Class Partners
+      </h3>
+    </div>
+
+    <LogoInfiniteScrollComponent />
+  </section> -->
+
+  <section class="h-screen w-screen"></section>
 </Layout>
