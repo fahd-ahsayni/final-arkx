@@ -3,14 +3,16 @@ const { title, text } = Astro.props;
 ---
 
 <div class="container-card h-full w-full">
-  <div class="card h-full w-full rounded-[10px] pb-8 pt-12 px-4">
+  <div class="card h-full w-full rounded-[3vw] overflow-hidden py-10 px-20">
     <span class="icon z-[2] relative table p-4">
       <slot />
     </span>
-    <h4 class="text-xl pt-5 pb-2.5 font-bold text-white">{title}</h4>
-    <p class="text-gray-200">
-      {text}
-    </p>
+    <div class="flex items-end justify-center flex-col">
+      <h4 class="text-[2vw] text-end pt-5 pb-2.5 text-white">{title}</h4>
+      <p class="text-gray-200 w-3/4 text-end text-lg">
+        {text}
+      </p>
+    </div>
     <div class="shine"></div>
     <div class="background">
       <div class="tiles">
@@ -36,43 +38,6 @@ const { title, text } = Astro.props;
 </div>
 
 <style>
-  body {
-    --background-color: #1A1A1A;
-    --text-color: #a1a1aa;
-    --card-background-color: rgba(255, 255, 255, 0.015);
-    --card-border-color: rgba(255, 255, 255, 0.1);
-    --card-box-shadow-1: rgba(0, 0, 0, 0.05);
-    --card-box-shadow-1-y: 3px;
-    --card-box-shadow-1-blur: 6px;
-    --card-box-shadow-2: rgba(0, 0, 0, 0.1);
-    --card-box-shadow-2-y: 8px;
-    --card-box-shadow-2-blur: 15px;
-    --card-label-color: #ffffff;
-    --card-icon-color: #d4d4d8;
-    --card-icon-background-color: rgba(255, 255, 255, 0.08);
-    --card-icon-border-color: rgba(255, 255, 255, 0.12);
-    --card-shine-opacity: 0.1;
-    --card-shine-gradient: conic-gradient(
-      from 205deg at 50% 50%,
-      rgba(16, 185, 129, 0) 0deg,
-      #6a00ff 25deg,
-      #6a00ff41 295deg,
-      rgba(16, 185, 129, 0) 360deg
-    );
-    --card-line-color: #6a00ff5b;
-    --card-tile-color: #6a00ff28;
-    --card-hover-border-color: rgba(255, 255, 255, 0.2);
-    --card-hover-box-shadow-1: rgba(0, 0, 0, 0.04);
-    --card-hover-box-shadow-1-y: 5px;
-    --card-hover-box-shadow-1-blur: 10px;
-    --card-hover-box-shadow-2: rgba(0, 0, 0, 0.3);
-    --card-hover-box-shadow-2-y: 15px;
-    --card-hover-box-shadow-2-blur: 25px;
-    --card-hover-icon-background-color: #6a00ff28;
-    --card-hover-icon-border-color: #6a00ff5b;
-    --blur-opacity: 0.01;
-  }
-
   .container-card * {
     transition-duration: 0s !important;
   }
@@ -112,7 +77,6 @@ const { title, text } = Astro.props;
 
   .card p {
     z-index: 2;
-    font-size: 14px;
     line-height: 1.7;
   }
   .card .shine {
