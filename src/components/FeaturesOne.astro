@@ -4,60 +4,30 @@ import CardHoverTalent from "./elements/CardHoverTalent.astro";
 ---
 
 <section class="w-full relative mt-32">
-  <!-- <span class="w-[12vw] h-[12vw] -left-36 top-0 absolute -z-10">
-    <svg
-      class="!w-full !h-full"
-      viewBox="0 0 200 200"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g clip-path="url(#clip0_227_4)">
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M100 200C155.228 200 200 155.228 200 100C200 44.7715 155.228 0 100 0C44.7715 0 0 44.7715 0 100C0 155.228 44.7715 200 100 200ZM100 188C148.601 188 188 148.601 188 100C188 51.3989 148.601 12 100 12C51.3989 12 12 51.3989 12 100C12 148.601 51.3989 188 100 188ZM100 176C141.974 176 176 141.974 176 100C176 58.0264 141.974 24 100 24C58.0264 24 24 58.0264 24 100C24 141.974 58.0264 176 100 176ZM100 164C135.346 164 164 135.346 164 100C164 64.6538 135.346 36 100 36C64.6538 36 36 64.6538 36 100C36 135.346 64.6538 164 100 164ZM152 100C152 128.719 128.719 152 100 152C71.2812 152 48 128.719 48 100C48 71.2812 71.2812 48 100 48C128.719 48 152 71.2812 152 100ZM140 100C140 122.091 122.091 140 100 140C77.9086 140 60 122.091 60 100C60 77.9086 77.9086 60 100 60C122.091 60 140 77.9086 140 100Z"
-          fill="url(#paint0_linear_227_4)"></path>
-      </g>
-      <defs>
-        <linearGradient
-          id="paint0_linear_227_4"
-          x1="27.5"
-          y1="19"
-          x2="149"
-          y2="174.5"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stop-color="#Ff3200"></stop>
-          <stop offset="1" stop-color="#FF6000"></stop>
-        </linearGradient>
-        <clipPath id="clip0_227_4">
-          <rect width="200" height="200" fill="white"></rect>
-        </clipPath>
-      </defs>
-    </svg>
-  </span> -->
   <div
-    class="mb-20 w-full px-20 mx-auto flex justify-between items-end text-center"
+    class="mb-8 md:max-w-full max-w-xl px-4 lg:px-20 md:px-12 mx-auto flex md:flex-row flex-col md:justify-between justify-center md:items-end items-center"
   >
-    <span class="w-[40vw]">
-      <h2 class="uppercase text-[2vw] text-start text-white relative z-10">
+    <span class="lg:w-[40vw] md:w-1/2 w-full">
+      <h2
+        class="uppercase lg:text-[2vw] md:text-[3vw] text-[6vw] text-start text-white relative z-10 md:font-normal font-medium"
+      >
         How do we take African and Arab youth into the future?
       </h2>
     </span>
-    <span class="w-[30vw]">
-      <h5 class="text-gray-100 text-end text-lg mt-4">
+    <span class="lg:w-[30vw] md:w-1/2">
+      <h5 class="text-gray-100 md:text-end text-start text-lg mt-4">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia vero
         dolorem cum, consectetur, cupiditate.
       </h5>
     </span>
   </div>
-  <div class="grid grid-cols-2 max-w-[80vw] px-20 mx-auto gap-6">
+  <div class="grid md:grid-cols-2 lg:max-w-[90vw] lg:px-20 px-10 mx-auto gap-6">
     <CardHover
       title="Economy"
       text="Africa’s digital economy will reach $180 B by 2025 and $712 B by 2050(Boston Consulting Group 2022)"
     >
       <svg
-        class=".svgCard"
+        class="svgCard"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
@@ -79,7 +49,7 @@ import CardHoverTalent from "./elements/CardHoverTalent.astro";
     >
       <span id="svg">
         <svg
-          class=".svgCard"
+          class="svgCard"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -100,7 +70,7 @@ import CardHoverTalent from "./elements/CardHoverTalent.astro";
       text="10 - 12 Million young africans enter the job Market every year | while only 3M jobs are created (World Labor Organization - 2022)"
     >
       <svg
-        class=".svgCard"
+        class="svgCard"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
@@ -115,13 +85,13 @@ import CardHoverTalent from "./elements/CardHoverTalent.astro";
         ></path>
       </svg>
     </CardHover>
-    <span class="rotate-12 relative -left-12 -top-10">
+    <span class="rotate-12 relative lg:-left-12 md:-left-2 lg:-top-10 -top-4">
       <CardHoverTalent
         title="Tech Talents"
         text="By 2030, the global tech talent shortage should reach 85 M Jobs (McKinsey)"
       >
         <svg
-          class=".svgCard"
+          class="svgCard"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -141,14 +111,12 @@ import CardHoverTalent from "./elements/CardHoverTalent.astro";
 </section>
 
 <style>
-  svg {
-    position: relative;
-    z-index: 1;
-    display: block;
-    width: 30px;
-    height: 30px;
-    transform: translateZ(0);
-    color: #dadada;
-    transition: color 0.25s;
+  @tailwind components;
+  @layer components {
+    .svgCard {
+      @apply h-6 lg:h-10 relative z-[1] block text-gray-100;
+      transform: translateZ(0);
+      transition: color 0.25s;
+    }
   }
 </style>
