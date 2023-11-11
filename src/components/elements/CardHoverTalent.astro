@@ -2,16 +2,24 @@
 const { title, text } = Astro.props;
 ---
 
-<div class="container-card h-full z-50 w-full relative">
-  <div class="card !bg-[#330072] h-full w-full rounded-[3vw] overflow-hidden lg:py-10 lg:px-20 px-6 py-8">
+<div class="container-card h-full z-10 w-full relative">
+  <div
+    class="card !bg-gradient-to-br from-[#ff3200] to-[#ff6000] h-full w-full rounded-[3vw] overflow-hidden lg:py-10 lg:px-20 px-6 py-8"
+  >
     <span class="icon z-[2] relative table p-4">
       <slot />
     </span>
     <div class="flex items-end justify-center flex-col">
-        <h4 class="lg:text-[2vw] md:text-[3.5vw] text-[6vw] text-end pt-5 pb-2.5 text-white">{title}</h4>
-        <p class="text-gray-200 lg:w-[90%] w-[80%] text-end lg:text-lg !z-0 relative text-sm">
-          {text}
-        </p>
+      <h4
+        class="lg:text-[2vw] md:text-[3.5vw] text-[6vw] text-end pt-5 pb-2.5 text-white z-10"
+      >
+        {title}
+      </h4>
+      <p
+        class="text-gray-100 lg:w-[90%] w-[80%] text-end lg:text-lg !z-0 relative text-sm"
+      >
+        {text}
+      </p>
     </div>
     <div class="shine"></div>
     <div class="background">
@@ -38,7 +46,6 @@ const { title, text } = Astro.props;
 </div>
 
 <style>
-
   .container-card * {
     transition-duration: 0s !important;
   }
@@ -49,7 +56,7 @@ const { title, text } = Astro.props;
         var(--card-box-shadow-1),
       0px var(--card-box-shadow-2-y) var(--card-box-shadow-2-blur)
         var(--card-box-shadow-2),
-      0 0 0 1px #31016b;
+      0 0 0 1px #ff3000;
     cursor: pointer;
     position: relative;
     transition: box-shadow 0.25s;
@@ -125,7 +132,7 @@ const { title, text } = Astro.props;
   }
   .card .background .tiles .tile {
     position: absolute;
-    background-color: var(--card-tile-color);
+    background-color: #ff3200;
     -webkit-animation-duration: 8s;
     animation-duration: 8s;
     -webkit-animation-iteration-count: infinite;
@@ -241,7 +248,7 @@ const { title, text } = Astro.props;
   .card .background .line:after {
     content: "";
     position: absolute;
-    background-color: var(--card-line-color);
+    background-color: #ff3200;
     transition: transform 0.35s;
   }
   .card .background .line:before {
@@ -289,15 +296,13 @@ const { title, text } = Astro.props;
       0px 3px 6px var(--card-hover-box-shadow-1),
       0px var(--card-hover-box-shadow-2-y) var(--card-hover-box-shadow-2-blur)
         var(--card-hover-box-shadow-2),
-      0 0 0 1px #6a00ff;
+      0 0 0 1px #ff3000;
   }
   .card:hover .icon::after {
-    background-color: var(--card-hover-icon-background-color);
-    border-color: var(--card-hover-icon-border-color);
+    background-color: #ff3000;
+    border-color: #ff2000;
   }
-  .card:hover .icon svg {
-    color: var(--card-hover-icon-color);
-  }
+
   .card:hover .shine {
     opacity: 1;
     transition-duration: 0.5s;
@@ -332,73 +337,5 @@ const { title, text } = Astro.props;
   .card:hover .background .line.line-3:before,
   .card:hover .background .line.line-3:after {
     transition-delay: 0.3s;
-  }
-
-  .day-night {
-    cursor: pointer;
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    opacity: 0.3;
-  }
-  .day-night input {
-    display: none;
-  }
-  .day-night input + div {
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    position: relative;
-    box-shadow: inset 8px -8px 0 0 var(--text-color);
-    transform: scale(1) rotate(-2deg);
-    transition:
-      box-shadow 0.5s ease 0s,
-      transform 0.4s ease 0.1s;
-  }
-  .day-night input + div:before {
-    content: "";
-    width: inherit;
-    height: inherit;
-    border-radius: inherit;
-    position: absolute;
-    left: 0;
-    top: 0;
-    transition: background-color 0.3s ease;
-  }
-  .day-night input + div:after {
-    content: "";
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    margin: -3px 0 0 -3px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    box-shadow:
-      0 -23px 0 var(--text-color),
-      0 23px 0 var(--text-color),
-      23px 0 0 var(--text-color),
-      -23px 0 0 var(--text-color),
-      15px 15px 0 var(--text-color),
-      -15px 15px 0 var(--text-color),
-      15px -15px 0 var(--text-color),
-      -15px -15px 0 var(--text-color);
-    transform: scale(0);
-    transition: all 0.3s ease;
-  }
-  .day-night input:checked + div {
-    box-shadow: inset 20px -20px 0 0 var(--text-color);
-    transform: scale(0.5) rotate(0deg);
-    transition:
-      transform 0.3s ease 0.1s,
-      box-shadow 0.2s ease 0s;
-  }
-  .day-night input:checked + div:before {
-    background: var(--text-color);
-    transition: background-color 0.3s ease 0.1s;
-  }
-  .day-night input:checked + div:after {
-    transform: scale(1);
-    transition: transform 0.5s ease 0.15s;
   }
 </style>

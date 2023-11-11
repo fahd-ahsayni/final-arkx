@@ -23,12 +23,6 @@ const { title } = Astro.props;
 
 <style is:global>
   @import url("https://fonts.cdnfonts.com/css/hubot-sans");
-@tailwind components;
-@layer components {
-  body {
-    @apply lg:w-[100vw] h-full overflow-x-hidden w-[100vw]
-  }
-}
   :root {
     --background-color: #1a1a1a;
     --text-color: #a1a1aa;
@@ -52,8 +46,8 @@ const { title } = Astro.props;
       #6a00ff41 295deg,
       rgba(16, 185, 129, 0) 360deg
     );
-    --card-line-color: #6a00ff5b;
-    --card-tile-color: #6a00ff28;
+    --card-line-color: #6a00ff39;
+    --card-tile-color: #6a00ff1b;
     --card-hover-border-color: rgba(255, 255, 255, 0.2);
     --card-hover-box-shadow-1: rgba(0, 0, 0, 0.04);
     --card-hover-box-shadow-1-y: 5px;

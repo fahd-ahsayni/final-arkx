@@ -1,79 +1,15 @@
 ---
 import { Image } from "astro:assets";
 import {partnerLogos} from "../constants"
+import Scroll from "../layouts/Scroll.astro";
 ---
 
-<div id="logoScroll" class="scroller max-w-5xl" data-speed="fast">
-  <ul class="tag-list scroller__inner">
+<Scroll>
     {
       partnerLogos.map((logo) => (
-        <li class="md:w-44 w-32 aspect-video cursor-pointer grayscale-[30%] hover:grayscale-0 flex items-center justify-center bg-gray-700/10 border border-white/10 shadow-md py-2 px-3 rounded">
+        <li class="md:w-48 w-40 aspect-video cursor-pointer grayscale-[30%] hover:grayscale-0 flex items-center justify-center bg-gray-700/10 border border-white/10 shadow-md py-2 px-3 rounded">
           <Image loading="lazy" height={50} class="w-full h-full object-fill" src={logo.logo} alt={logo.name} />
         </li>
       ))
     }
-  </ul>
-</div>
-
-<style>
-
-  .scroller__inner {
-    padding-block: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.2rem;
-  }
-
-  .scroller[data-animated="true"] {
-    overflow: hidden;
-    -webkit-mask: linear-gradient(
-      90deg,
-      transparent,
-      white 20%,
-      white 80%,
-      transparent
-    );
-    mask: linear-gradient(
-      90deg,
-      transparent,
-      white 20%,
-      white 80%,
-      transparent
-    );
-  }
-
-  .scroller[data-animated="true"] .scroller__inner {
-    width: max-content;
-    flex-wrap: nowrap;
-    animation: scroll var(--_animation-duration, 40s)
-      var(--_animation-direction, forwards) linear infinite;
-  }
-
-  .scroller[data-direction="right"] {
-    --_animation-direction: reverse;
-  }
-
-  .scroller[data-direction="left"] {
-    --_animation-direction: forwards;
-  }
-
-  .scroller[data-speed="fast"] {
-    --_animation-duration: 20s;
-  }
-
-  .scroller[data-speed="slow"] {
-    --_animation-duration: 60s;
-  }
-
-  @keyframes scroll {
-    to {
-      transform: translate(calc(-50% - 0.5rem));
-    }
-  }
-
-  .tag-list li {
-    margin: 0.5rem;
-  }
-</style>
-
-<script src="../js/logo-infinite-scroll.js"></script>
+</Scroll>

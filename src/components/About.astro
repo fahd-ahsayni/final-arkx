@@ -1,0 +1,95 @@
+---
+import LogoInfiniteScrollComponent from "./LogoInfiniteScrollComponent.astro";
+---
+
+<section class="w-full px-4 lg:px-20 md:px-12 md:mt-32 -mt-20 relative">
+  <div class="mb-8 md:max-w-full max-w-full mx-auto">
+    <h2
+      class="uppercase lg:text-[2vw] md:text-[3vw] text-[6vw] text-start text-white relative z-10 md:font-normal font-medium"
+    >
+      Unlock The power of <br /> Tech with Ark-x
+    </h2>
+    <!-- <div class="grid_gradient"></div> -->
+  </div>
+  <div class="flex md:flex-row flex-col mt-6 justify-center items-center">
+    <div class="w-full relative">
+      <p class="lg:text-xl text-lg text-gray-100">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima iste
+        ullam nobis esse. Beatae, eius aspernatur? Distinctio saepe autem
+        doloremque ducimus tempora incidunt ex! Aspernatur est ipsam doloribus
+        nemo animi.
+      </p>
+
+      <div class="w-full flex mt-8 items-center">
+        <button
+          class="text-white pr-2 pl-6 py-1.5 bg-gradient-to-br from-[#ff3200] to-[#ff6000] rounded-full font-semibold text-sm flex justify-between items-center"
+        >
+          <span class="px-8">Red More ?</span>
+          <span
+            class="h-12 w-12 p-3 rounded-full bg-white flex items-center justify-center"
+          >
+            <svg
+              class="!text-black w-full h-full"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="#000"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      class="w-full relative flex items-center justify-center md:-mt-4 mt-80"
+    >
+      <div id="image1" class="images"></div>
+      <div id="image2" class="images"></div>
+      <div id="image3" class="images"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @tailwind components;
+  @layer components {
+    .images {
+      @apply absolute md:w-[20vw] md:h-[25vw] w-[46vw] h-[60vw] rounded-xl grayscale cursor-pointer
+        hover:grayscale-0 hover:scale-110 bg-cover bg-center;
+      transition: all cubic-bezier(0.19, 1, 0.22, 1) 1.5s;
+    }
+  }
+  .images:nth-child(1) {
+    transform: translate(-40%, -8%) rotate(-20deg);
+    background-image: url(https://ik.imagekit.io/fahdahsayni/arkx/abooutImage2.jpg?updatedAt=1697454071111);
+  }
+  .images:nth-child(2) {
+    transform: translate(-15%, 0%) rotate(-15deg);
+    background-image: url(https://ik.imagekit.io/fahdahsayni/arkx/aboutImage1.jpg?updatedAt=1697454071276);
+  }
+  .images:nth-child(3) {
+    transform: translate(20%, 10%) rotate(-5deg);
+    background-image: url(https://ik.imagekit.io/fahdahsayni/arkx/aboutIamge3.jpg?updatedAt=1697454071167);
+  }
+  .grid_gradient {
+    --line: hsl(0 0% 95% / 0.25);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background:
+      linear-gradient(90deg, var(--line) 1px, transparent 1px 10vmin) 0 -5vmin /
+        10vmin 10vmin,
+      linear-gradient(var(--line) 1px, transparent 1px 10vmin) 0 -5vmin / 10vmin
+        10vmin;
+    mask: linear-gradient(-15deg, transparent 30%, white);
+    top: 0;
+    z-index: -99;
+  }
+</style>

@@ -1,0 +1,24 @@
+---
+import { Image } from "astro:assets";
+import Scroll from "../layouts/Scroll.astro";
+import rocket from "../assets/svg/rocket-orange.svg";
+---
+
+<Scroll>
+  <li class="mr-6">
+    <h2 class="">
+      <span>#into</span>
+      <span class="text-[#ff3200]">The</span>
+      <span>future</span>
+    </h2>
+  </li>
+  <li class="mr-6">
+    <Image src={rocket} class="w-8" alt="" />
+  </li>
+  <li class="mr-6">
+    <h2 class="uppercase text-white text-semibold text-[5vw]">
+      <span>#Becoming</span>
+      <span class="text-[#ff3200]">HEROES</span>
+    </h2>
+  </li>
+</Scroll>
