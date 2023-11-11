@@ -1,3 +1,50 @@
 ---
+import { Image } from "astro:assets";
+import Scroll from "../layouts/Scroll.astro";
+import rocket from "../assets/svg/rocket-ornge.svg";
+import Wavy from "./Wavy.astro";
 ---
 
+<section class="w-full mt-12 md:block hidden">
+  <div
+    class="w-full uppercase bg-[#1A1A1A] text-[2vw] font-medium text-white shadow-md"
+  >
+    <Scroll>
+      <li class="mr-6">
+        <h2 class="">
+          <span>#into</span>
+          <span class="text-[#ff3200]">The</span>
+          <span>future</span>
+        </h2>
+      </li>
+      <li class="mr-6">
+        <Image src={rocket} class="w-12" alt="" />
+      </li>
+      <li class="mr-6">
+        <h2>
+          <span>#Becoming</span>
+          <span class="text-[#ff3200]">HEROES</span>
+        </h2>
+      </li>
+      <li class="mr-6">
+        <Image src={rocket} class="w-12" alt="" />
+      </li>
+      <li class="mr-6">
+        <h2>
+          <span class="text-[#ff3200]">#</span>
+          <span>TECHNOLOGISTS</span>
+          <span class="text-[#ff3200]">2023</span>
+        </h2>
+      </li>
+      <li class="mr-6">
+        <Image src={rocket} class="w-12" alt="" />
+      </li>
+    </Scroll>
+  </div>
+</section>
+
+<div
+  class="uppercase md:hidden text-white font-nedium text-[5vw] w-screen absolute bottom-0 bg-[#1a1a1a] shadow-md flex items-center"
+>
+  <Wavy />
+</div>

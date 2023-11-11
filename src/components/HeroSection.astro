@@ -9,7 +9,7 @@ import job from "../assets/icons/job.svg";
 ---
 
 <section
-  class="w-screen md:flex hidden h-screen relative items-center justify-center flex-col mt-10"
+  class="w-full md:flex hidden h-screen relative items-center justify-center flex-col mt-10"
 >
   <div class="w-full flex items-center justify-center flex-col relative z-0">
     <h2
@@ -79,25 +79,26 @@ import job from "../assets/icons/job.svg";
     class="max-w-4xl relative mx-auto flex items-center justify-center mt-8 space-x-4"
   >
     <button
-      class="bg-gradient-to-b from-[#ff3200] to-[#ff6000] hover:bg-orange-500 text-white font-medium py-3.5 px-8 rounded-full"
+      class="bg-gradient-to-b from-[#ff3200] to-[#ff6000] hover:bg-orange-500 text-white font-medium py-3.5 px-8 rounded-full uppercase"
     >
       Join Community
     </button>
-    <a
-    href="#"
-      class="w-14 h-14 rounded-full bg-white flex items-center justify-center"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="#161616"
-        class="w-6 h-6"
+    <a href="#">
+      <span
+        class="w-14 h-14 rounded-full bg-white flex items-center justify-center"
       >
-        <path
-          fill-rule="evenodd"
-          d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z"
-          clip-rule="evenodd"></path>
-      </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="#161616"
+          class="w-6 h-6"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </span>
     </a>
   </div>
   <section class="w-full -mb-20 pt-[3vw] px-8">
@@ -108,22 +109,22 @@ import job from "../assets/icons/job.svg";
         <div class="flex space-x-2 items-center justify-center">
           <Image src={student} alt="student Arkx" class="w-8 h-auto" />
           <div class="text-white">
-            <p class="font-medium">+600</p>
-            <p class="text-sm">Alumnis</p>
+            <p class="font-bold lg:text-2xl">+600</p>
+            <p class="text-sm ml-2">Alumnis</p>
           </div>
         </div>
         <div class="flex space-x-2 items-center justify-center">
           <Image src={developper} alt="student Arkx" class="w-8 h-auto" />
           <div class="text-white">
-            <p class="font-medium">+5000</p>
-            <p class="text-sm">Initiated to coding</p>
+            <p class="font-bold lg:text-2xl">+5000</p>
+            <p class="text-sm ml-2">Initiated to coding</p>
           </div>
         </div>
         <div class="flex space-x-2 items-center justify-center">
           <Image src={job} alt="student Arkx" class="w-8 h-auto" />
           <div class="text-white">
-            <p class="font-medium">+87%</p>
-            <p class="text-sm">Insertion rate</p>
+            <p class="font-bold lg:text-2xl">+87%</p>
+            <p class="text-sm ml-2">Insertion rate</p>
           </div>
         </div>
       </div>
@@ -157,9 +158,8 @@ import job from "../assets/icons/job.svg";
             </clipPath>
           </defs>
         </svg>
-        
       </div>
-      <h2 class="font-medium text-3xl text-white text-center w-full">
+      <h2 class="font-medium lg:text-3xl text-xl text-white text-center w-full">
         5 Years of Impact
       </h2>
     </div>

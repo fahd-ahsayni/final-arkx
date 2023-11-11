@@ -2,7 +2,7 @@
 
 ---
 
-<div id="logoScroll" class="scroller max-w-5xl" data-speed="fast">
+<div id="logoScroll" class="scroller max-w-full" data-speed="fast">
   <ul class="tag-list scroller__inner w-full">
     <slot />
   </ul>
@@ -12,6 +12,7 @@
   .scroller__inner {
     padding-block: 1rem;
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
     gap: 0.2rem;
   }

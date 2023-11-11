@@ -16,7 +16,7 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="overflow-x-hidden">
+  <body>
     <slot />
   </body>
 </html>
@@ -62,13 +62,18 @@ const { title } = Astro.props;
   * {
     font-family: "Hubot-Sans", sans-serif;
   }
-
   html {
     background: #161616;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
+    width: 100vw;
+    height: 100vh;
   }
 
+body {
+  transition: 0.3s ease-out;
+  overflow-x: hidden;
+}
   .grid_gradient {
     --line: hsla(0, 0%, 95%, 0.391);
     background:
@@ -79,3 +84,5 @@ const { title } = Astro.props;
     mask: linear-gradient(-15deg, transparent 30%, white);
   }
 </style>
+
+<script src="../js/change-background.js"></script>

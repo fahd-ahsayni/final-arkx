@@ -3,7 +3,11 @@ import CardHover from "./elements/CardHover.astro";
 import CardHoverTalent from "./elements/CardHoverTalent.astro";
 ---
 
-<section class="w-full relative lg:mt-72 mt-72 md:mt-12">
+<section
+id="f"
+  data-bgcolor="#e3857a"
+  class="changing w-full relative lg:mt-72 mt-72 md:mt-32"
+>
   <div
     class="mb-8 md:max-w-full max-w-3xl px-8 lg:px-20 md:px-12 mx-auto flex md:flex-row flex-col md:justify-between justify-center md:items-end items-center"
   >
@@ -85,7 +89,9 @@ import CardHoverTalent from "./elements/CardHoverTalent.astro";
         ></path>
       </svg>
     </CardHover>
-    <span class="md:rotate-6 relative lg:-left-12 md:-left-2 lg:-top-10 md:-top-4">
+    <span
+      class="md:rotate-6 relative lg:-left-12 md:-left-2 lg:-top-10 md:-top-4"
+    >
       <CardHoverTalent
         title="Tech Talents"
         text="By 2030, the global tech talent shortage should reach 85 M Jobs (McKinsey)"
@@ -120,3 +126,6 @@ import CardHoverTalent from "./elements/CardHoverTalent.astro";
     }
   }
 </style>
+
+<script>
+</script>
