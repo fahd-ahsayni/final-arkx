@@ -3,9 +3,6 @@ import Chroma from "../components/designs/Chroma.astro";
 import Navbar from "../components/Navbar.astro";
 import Layout from "../layouts/Layout.astro";
 import HeroSection from "../components/HeroSection.astro";
-import LogoInfiniteScrollComponent from "../components/LogoInfiniteScrollComponent.astro";
-import MarqueeImages from "../components/elements/MarqueeImages.astro";
-import CardHover from "../components/elements/CardHover.astro";
 import FeaturesOne from "../components/FeaturesOne.astro";
 import LearningEngine from "../components/LearningEngine.astro";
 import HeroSectionMobile from "../components/HeroSectionMobile.astro";
@@ -15,28 +12,14 @@ import WavyDesktop from "../components/WavyDesktop.astro";
 
 <Layout title="Welcome to Arkx Talent Factory.">
   <Navbar />
-  <HeroSection />
   <Chroma />
-  <HeroSectionMobile />
   <div class="container-scroll relative top-0">
-    <!-- <section class="h-screen w-screen"></section> -->
-    <div>
-      <WavyDesktop />
-      <About />
-      <!-- <MarqueeImages /> -->
-      <FeaturesOne />
-      <LearningEngine />
-      <!-- <section class="w-screen h-1/4 flex flex-col items-center justify-center">
-    <div class="max-w-7xl text-center mx-auto pb-4">
-      <h3 class="text-2xl text-white">
-        ARKx is Supported by a Network of World-Class Partners
-      </h3>
-    </div>
+    <HeroSection />
+    <HeroSectionMobile />
 
-    <LogoInfiniteScrollComponent />
-  </section> -->
-
-      <section class="h-screen w-screen"></section>
-    </div>
+    <WavyDesktop />
+    <About />
+    <FeaturesOne />
+    <LearningEngine />
   </div>
 </Layout>

@@ -9,20 +9,33 @@ import job from "../assets/icons/job.svg";
 ---
 
 <section
-  class="w-full md:flex hidden h-screen relative items-center justify-center flex-col mt-10"
+  id="heroSection"
+  class="w-full md:flex hidden h-screen relative items-center justify-center flex-col -mt-10"
 >
-  <div class="w-full flex items-center justify-center flex-col relative z-0">
+  <div
+    id="text"
+    class="w-full flex items-center justify-center flex-col relative z-0"
+  >
     <h2
       class="lg:text-7xl text-5xl font-semibold text-white flex items-end space-x-4 justify-center"
     >
       <span>Harness</span>
-      <span class="relative -z-10 flex md:mb-2 items-center justify-center">
+      <span
+        class="relative h-60 overflow-hidden -z-10 flex md:mb-2 items-end justify-center"
+      >
         <Image
           src={backgroundGalaxy}
           alt=""
           class="md:w-40 w-20 h-auto rounded-full"
         />
-        <Image src={astroSvg} alt="" class="w-52 h-auto absolute bottom-0" />
+        <span class="bg-white h-60 flex items-center justify-center">
+          <Image
+            id="astro"
+            src={astroSvg}
+            alt=""
+            class="w-52 h-auto absolute -left-2 -bottom-32"
+          />
+        </span>
       </span>
       <span>Africa's</span>
     </h2>
@@ -31,6 +44,7 @@ import job from "../assets/icons/job.svg";
       class="lg:text-7xl text-5xl relative font-semibold text-white flex items-end space-x-4 justify-center"
     >
       <span
+        id="frfara"
         class="absolute -z-50 -right-6 -bottom-3.5 lg:h-24 lg:w-24 w-20 h-20"
       >
         <svg
@@ -69,7 +83,10 @@ import job from "../assets/icons/job.svg";
     </h2>
   </div>
   <div class="max-w-5xl mx-auto text-center px-8 relative">
-    <p class="text-gray-100 pt-8 md:text-xl text-lg mix-blend-difference">
+    <p
+      id="paragraph"
+      class="text-gray-100 pt-8 md:text-xl text-lg mix-blend-difference"
+    >
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ducimus
       eligendi repellendus voluptatibus maxime sequi, nemo fugit excepturi
       consequuntur!
@@ -130,6 +147,7 @@ import job from "../assets/icons/job.svg";
       </div>
       <div class="w-full h-full absolute flex items-center justify-center">
         <svg
+          id="frfara2"
           width="6vw"
           height="6vw"
           viewBox="0 0 200 200"
@@ -165,3 +183,4 @@ import job from "../assets/icons/job.svg";
     </div>
   </section>
 </section>
+
