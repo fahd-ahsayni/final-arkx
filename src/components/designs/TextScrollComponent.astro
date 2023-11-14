@@ -1,0 +1,83 @@
+---
+
+---
+
+<div class="lg:w-2/3 w-full lg:px-0 md:px-10">
+  <div class="container">
+    <div class="w-full">
+      <h1 class="text">TAKE<span>SCAN THIS QR</span></h1>
+      <h1 class="text">THE FIRST STEP<span>AND APPLY NOW</span></h1>
+      <h1 class="text">TOWWWARDS<span>TO UNLEACH</span></h1>
+      <h1 class="text">
+        A FUTURE<span>YOUR FULL</span>
+      </h1>
+      <h1 data-scroll class="text">
+        IN TECH!<span>POTENTIAL</span>
+      </h1>
+    </div>
+  </div>
+  <div class="lg:w-3/4 lg:px-20 px-8">
+    <p class="text-gray-100 text-lg">
+      We are proud to be a part of the Jobintech program. As an accredited
+      training provider under the Jobintech label, ARKX offers a range of
+      cutting-edge courses and certifications.
+    </p>
+    <div class="w-full flex mt-8 items-center">
+      <button
+        class="text-white uppercase px-10 py-3 bg-gradient-to-br from-green-600 to-green-500 rounded-xl font-semibold shadow-md"
+      >
+        <div class="flex items-center">
+          <p class="mr-4">Apply Now</p>
+
+          <svg
+            class="w-7 h-7"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"></path>
+          </svg>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+
+<style>
+  @tailwind components;
+  @layer components {
+    .container {
+      @apply w-full flex flex-col lg:justify-center justify-start items-start lg:px-20 md:px-0 px-8;
+    }
+    .text {
+      @apply lg:text-[4vw] text-[8vw] m-0 w-full text-[#b6b6b633] bg-clip-text
+      bg-gradient-to-r from-[#fff] to-[#fff] bg-no-repeat flex flex-col items-start
+      justify-center relative cursor-pointer font-bold;
+      letter-spacing: -0.01em;
+      line-height: 100%;
+      -webkit-background-clip: text;
+      background-size: 0%;
+      transition: background-size cubic-bezier(0.1, 0.5, 0.5, 1) 0.5s;
+    }
+    span {
+      @apply absolute w-full h-full bg-green-600 text-white flex
+      items-center justify-start;
+      background-size: 100%;
+      clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
+      transform-origin: center;
+      transition: all cubic-bezier(0.1, 0.5, 0.5, 1) 0.4s;
+    }
+  }
+
+  .text:hover > span {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+</style>
+
+<script src="../../js/text-scroll.js"></script>

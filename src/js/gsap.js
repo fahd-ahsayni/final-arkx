@@ -22,8 +22,9 @@ gsap.to("#astro", {
   onComplete: () => {
     tl.to("#frfara", {
       scale: 1,
-      rotate: "20deg",
+      rotate: "360deg",
       duration: 1,
+      delay: -1,
     });
   },
 });
@@ -58,10 +59,10 @@ tl.to("#paragraph", {
 tl.to("#frfara, #frfara2", {
   scrollTrigger: {
     trigger: "#heroSection",
-    start: "top center",
+    start: "top top",
     scrub: true,
   },
-  rotate: "280deg",
+  rotate: "180deg",
 });
 
 gsap.set(".card-features-one", { yPercent: 150 });
@@ -80,7 +81,6 @@ tl.to(".card-features-one", {
 
 tl.to("#image1", {
   scrollTrigger: {
-    trigger: "#wave",
     start: "top 20%",
     scrub: 2.2,
   },
@@ -88,7 +88,6 @@ tl.to("#image1", {
 });
 tl.to("#image2", {
   scrollTrigger: {
-    trigger: "#wave",
     start: "top 20%",
     scrub: 2.2,
   },
@@ -97,29 +96,41 @@ tl.to("#image2", {
 });
 tl.to("#image3", {
   scrollTrigger: {
-    trigger: "#wave",
     start: "top 20%",
     scrub: 2.2,
   },
-  xPercent: 70,
+  xPercent: 100,
   yPercent: -30,
 });
 
+gsap.set("#app", {xPercent: -130})
+
+tl.to("#app", {
+  scrollTrigger: {
+    trigger: "#jobintech",
+    start: "top top",
+    end: "bottom 40%",
+    scrub: true,
+  },
+  xPercent: 0,
+  yPercent: 10
+});
 /* COLOR CHANGER */
-// const letChange = gsap.timeline({
-//     defaults: { duration: 0.5 },
-//     paused: true
-//   });
 
-//   letChange.to('body', { backgroundColor: 'red' });
+  const letChange = gsap.timeline({
+    defaults: { duration: 0.5 },
+    paused: true
+  });
 
-//   ScrollTrigger.create({
-//     trigger: '',
-//     start: 'top 80%',
-//     end: 'bottom 40%',
-//     animation: letChange,
-//     toggleActions: 'play pause resume reverse',
-//     onEnter: () => letChange.play(),
-//     onLeave: () => letChange.reverse(),
-//     onEnterBack: () => letChange.play()
-//   });
+  const bgGreen = letChange.to('body', { backgroundColor: '#0e1504'});
+
+  ScrollTrigger.create({
+    trigger: '#jobintechxArkx',
+    start: 'top 50%',
+    end: 'bottom 40%',
+    animation: bgGreen,
+    toggleActions: 'play pause resume reverse',
+    onEnter: () => bgGreen.play(),
+    onLeave: () => bgGreen.reverse(),
+    onEnterBack: () => bgGreen.play()
+  });

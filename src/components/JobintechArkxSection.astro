@@ -1,0 +1,38 @@
+---
+import { Image } from "astro:assets";
+import TextScrollComponent from "./designs/TextScrollComponent.astro";
+import CardThreeD from "./elements/CardThreeD.astro";
+import background from "../assets/design/jobintech.png";
+import MarqueeImages from "./elements/MarqueeImages.astro";
+---
+
+<section id="jobintechxArkx" class="w-screen">
+  <div
+    class="mb-8 md:max-w-full px-8 lg:px-20 flex md:flex-row flex-col md:justify-between justify-center md:items-end items-center md:mt-0 mt-96"
+  >
+    <span class="lg:w-[40vw] md:w-1/2 w-full -mb-4">
+      <h2
+        class="uppercase lg:text-[2vw] md:text-[3vw] text-[6vw] text-start text-white relative z-10 md:font-bold font-medium"
+      >
+        Unleashing Tech Potential <br /> Jobintech x ARKX
+      </h2>
+    </span>
+    <span class="lg:w-[40vw] md:w-1/2">
+      <h5 class="text-gray-100 md:text-end text-start text-lg mt-4">
+        Join Jobintech for cutting-edge courses and certifications. Enhance your
+        tech skills with government support for a successful career in the
+        industry.
+      </h5>
+    </span>
+  </div>
+  <div class="w-full flex flex-col lg:flex-row items-center justify-center lg:mt-4 md:mt-16">
+    <TextScrollComponent />
+    <!-- todo: For mobile w-full -->
+    <div class="w-1/2 flex items-center justify-center" id="card_jobuntech">
+      <CardThreeD />
+    </div>
+  </div>
+  <div class="w-full">
+    <MarqueeImages />
+  </div>
+</section>

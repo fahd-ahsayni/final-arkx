@@ -4,31 +4,31 @@ import a from "../../assets/pictures/a.jpg";
 import b from "../../assets/pictures/b.jpg";
 import c from "../../assets/pictures/c.jpg";
 ---
-<div class="w-full flex items-center justify-center mt-20">
-<div class="marquee">
-  
-  <ul class="marquee-content space-x-8 flex items-center justify-start">
-    <li class="h-full">
-      <Image src={a} alt="img" class="rounded-3xl grayscale hover:grayscale-0 transition-all duration-1000 cursor-pointer w-96" />
-    </li>
-    <li><Image src={b} alt="img" class="rotate-6 rounded-3xl grayscale hover:grayscale-0 transition-all duration-1000 cursor-pointer w-96" /></li>
-    <li><Image src={c} alt="img" class="-rotate-10 rounded-3xl grayscale hover:grayscale-0 transition-all duration-1000 cursor-pointer w-96" /></li>
-    <li><Image src={a} alt="img" class="rotate-3 rounded-3xl grayscale hover:grayscale-0 transition-all duration-1000 cursor-pointer w-96" /></li>
-    <li><Image src={b} alt="img" class="-rotate-6 rounded-3xl grayscale hover:grayscale-0 transition-all duration-1000 cursor-pointer w-96" /></li>
-    <li><Image src={c} alt="img" class="rotate-0 rounded-3xl grayscale hover:grayscale-0 transition-all duration-1000 cursor-pointer w-96" /></li>
-    <li><Image src={a} alt="img" class="-rotate-12 rounded-3xl grayscale hover:grayscale-0 transition-all duration-1000 cursor-pointer w-96" /></li>
-    <li><Image src={b} alt="img" class="rotate-6 rounded-3xl grayscale hover:grayscale-0 transition-all duration-1000 cursor-pointer w-96" /></li>
-    <li><Image src={c} alt="img" class="rotate-6 rounded-3xl grayscale hover:grayscale-0 transition-all duration-1000 cursor-pointer w-96" /></li>
-  </ul>
-</div>
+
+<div class="w-full flex items-center justify-center mt-52">
+  <div class="marquee">
+    <ul class="marquee-content space-x-4 flex">
+      <li class="h-full">
+        <Image src={a} alt="img" class="rounded-3xl" />
+      </li>
+      <li><Image src={b} alt="img" class="rounded-xl image" /></li>
+      <li><Image src={c} alt="img" class="rounded-xl" /></li>
+      <li><Image src={a} alt="img" class="rounded-xl" /></li>
+      <li><Image src={b} alt="img" class="rounded-xl" /></li>
+      <li><Image src={c} alt="img" class="rounded-xl" /></li>
+      <li><Image src={a} alt="img" class="rounded-xl" /></li>
+      <li><Image src={b} alt="img" class="rounded-xl" /></li>
+      <li><Image src={c} alt="img" class="rounded-xl" /></li>
+    </ul>
+  </div>
 </div>
 
 <style>
   :root {
-    --marquee-width: 100%;
+    --marquee-width: 130%;
     --marquee-height: 50vh;
     /* --marquee-elements: 12; */ /* defined with JavaScript */
-    --marquee-elements-displayed: 5;
+    --marquee-elements-displayed: 4;
     --marquee-element-width: calc(
       var(--marquee-width) / var(--marquee-elements-displayed)
     );
@@ -40,23 +40,6 @@ import c from "../../assets/pictures/c.jpg";
     height: var(--marquee-height);
     overflow: hidden;
     position: relative;
-  }
-  .marquee:before,
-  .marquee:after {
-    position: absolute;
-    top: 0;
-    width: 10rem;
-    height: 100%;
-    content: "";
-    z-index: 1;
-  }
-  .marquee:before {
-    left: 0;
-    background: linear-gradient(to right, #161616 0%, transparent 100%);
-  }
-  .marquee:after {
-    right: 0;
-    background: linear-gradient(to left, #161616 0%, transparent 100%);
   }
   .marquee-content {
     list-style: none;
@@ -89,10 +72,6 @@ import c from "../../assets/pictures/c.jpg";
       --marquee-width: 100vw;
       --marquee-height: 16vh;
       --marquee-elements-displayed: 3;
-    }
-    .marquee:before,
-    .marquee:after {
-      width: 5rem;
     }
   }
 </style>

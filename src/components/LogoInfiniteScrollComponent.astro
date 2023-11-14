@@ -7,7 +7,7 @@ import Scroll from "../layouts/Scroll.astro";
 <Scroll>
     {
       partnerLogos.map((logo) => (
-        <li class="md:w-48 w-40 aspect-video cursor-pointer grayscale-[30%] hover:grayscale-0 flex items-center justify-center bg-gray-700/10 border border-white/10 shadow-md py-2 px-3 rounded">
+        <li class="md:w-48 w-40 mr-6 aspect-video cursor-pointer grayscale-[30%] hover:grayscale-0 flex items-center justify-center bg-gray-700/10 border border-white/10 shadow-md py-2 px-3 rounded">
           <Image loading="lazy" height={50} class="w-full h-full object-fill" src={logo.logo} alt={logo.name} />
         </li>
       ))
