@@ -5,14 +5,15 @@ gsap.registerPlugin(ScrollTrigger);
 
 const tl = gsap.timeline();
 
-tl.to("#chroma", {
-  scrollTrigger: {
-    trigger: "#heroSection",
-    start: "top top",
-    scrub: true,
-  },
-  yPercent: -150,
-});
+// tl.to("#chroma", {
+//   scrollTrigger: {
+//     trigger: "#heroSection",
+//     start: "top top",
+//     scrub: true,
+//   },
+//   yPercent: -150,
+// });
+
 gsap.set("#frfara", { scale: 0 });
 
 gsap.to("#astro", {
@@ -47,6 +48,23 @@ tl.to("#paragraph", {
   yPercent: -80,
 });
 
+tl.to("#titles-mobile", {
+  scrollTrigger: {
+    trigger: "#heroSectionMobile",
+    start: "top 20%",
+    scrub: 2.2,
+  },
+  yPercent: -90,
+});
+
+// tl.to("#title2", {
+//   scrollTrigger: {
+//     trigger: "#heroSection",
+//     start: "top top",
+//     scrub: true,
+//   },
+//   yPercent: -90,
+// });
 // tl.to("#title2", {
 //   scrollTrigger: {
 //     trigger: "#heroSection",
@@ -60,7 +78,7 @@ tl.to("#frfara, #frfara2", {
   scrollTrigger: {
     trigger: "#heroSection",
     start: "top top",
-    scrub: true,
+    scrub: 2.2,
   },
   rotate: "180deg",
 });
@@ -122,7 +140,7 @@ tl.to("#app", {
     paused: true
   });
 
-  const bgGreen = letChange.to('body', { backgroundColor: '#0e1504'});
+  const bgGreen = letChange.to('body', { backgroundColor: '#052e16'});
 
   ScrollTrigger.create({
     trigger: '#jobintechxArkx',

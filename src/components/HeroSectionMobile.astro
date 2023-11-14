@@ -11,9 +11,10 @@ import Wavy from "./Wavy.astro";
 ---
 
 <section
-  class="w-full h-screen flex flex-col items-center justify-start mt-40 md:hidden"
+  id="heroSectionMobile"
+  class="w-full overflow-hidden flex flex-col items-center justify-start pt-40 md:hidden"
 >
-  <div class="w-full text-white font-semibold px-8">
+  <div id="titles-mobile" class="w-full text-white font-semibold px-8">
     <h2 class="text-[6vw] text-end">Unleash African's</h2>
     <h2 class="text-[16vw] uppercase flex justify-center items-center gap-6">
       <span class="relative w-full flex items-center justify-end">
@@ -24,11 +25,16 @@ import Wavy from "./Wavy.astro";
     </h2>
     <h2 class="text-[10vw] relative flex items-center justify-center">
       <span>Potential.</span>
-      <Image id="frfara" src={shapeOne} alt="" class="w-20 absolute -z-10 right-16" />
+      <Image
+        id="frfara"
+        src={shapeOne}
+        alt=""
+        class="w-20 absolute -z-10 right-16"
+      />
     </h2>
   </div>
   <div class="max-w-lg px-6 mx-auto text-center mt-2.5">
-    <p class="text-white text-lg">
+    <p id="paragraph" class="text-white text-lg">
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam aut
       dolore maxime temporibus.
     </p>
@@ -86,7 +92,9 @@ import Wavy from "./Wavy.astro";
         </div>
       </div>
     </div>
-    <div class="w-full relative border rounded-full flex items-center justify-center bg-[#1a1a1a] shadow-md">
+    <div
+      class="w-full relative border rounded-full flex items-center justify-center bg-[#1a1a1a] shadow-md"
+    >
       <Image id="frfara2" src={shapeTwo} alt="" class="absolute w-20 -left-4" />
       <h2 class="text-2xl text-center py-4 text-white">5 Years of Impact</h2>
     </div>
